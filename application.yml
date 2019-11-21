@@ -1,16 +1,23 @@
 spring:
   profiles:
-    active:
-      - dev
+    active: dev
 ---
 spring:
+<<<<<<< HEAD
   profiles: dev                  
+=======
+  profiles: dev                   
+>>>>>>> 414f179c62be5d20e1b0d39a69a22da149f52fa9
   application:
     name: springcloud-service-config-dev
     
 ---
 spring:
+<<<<<<< HEAD
   profiles: test                  
+=======
+  profiles: test                 
+>>>>>>> 414f179c62be5d20e1b0d39a69a22da149f52fa9
   application:
     name: springcloud-service-config-test
 
