@@ -2,15 +2,15 @@ spring:
   profiles:
     active:
       - dev
----
+
 spring:
-  profiles: dev                   #开发环境
+  profiles: dev                   #驴陋路垄禄路戮鲁
   application:
     name: springcloud-service-config-dev
     
----
+
 spring:
-  profiles: test                  #测试环境
+  profiles: test                  #虏芒脢脭禄路戮鲁
   application:
     name: springcloud-service-config-test
 
