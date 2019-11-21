@@ -4,13 +4,13 @@ spring:
       - dev
 
 spring:
-  profiles: dev                   #¿ª·¢»·¾³
+  profiles: dev                   
   application:
     name: springcloud-service-config-dev
     
 
 spring:
-  profiles: test                  #²âÊÔ»·¾³
+  profiles: test                 
   application:
     name: springcloud-service-config-test
 
