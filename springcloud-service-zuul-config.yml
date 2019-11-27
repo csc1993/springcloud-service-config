@@ -1,14 +1,70 @@
+spring:
+  profiles:
+    active: dev
+
+---
+#开发环境端口号
+server: 
+  port: 2003
+
+spring:
+  profiles: dev
+  application:
+    name: springcloud-service-zuul-config
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: 
+      defaultZone: http://eureka8003.com:8003/eureka/,http://eureka8002.com:8002/eureka/,http://eureka8001.com:8001/eureka/
+
 zuul:
   routes:
     ignored-services:  *
 ### 定义转发服务规则
 	api-a:
-###	当客户端发送的请求以 127.0.0.1:6000/api-login 开头的都会转发到登录服务 
+###	当客户端发送的请求以 127.0.0.1:2003/api-login 开头的都会转发到登录服务 
 	  path:/api-login/
 ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
 	  serviceId:  app-login-service
 	api-b:
-###	当客户端发送的请求以 127.0.0.1:6000/api-opendoor 开头的都会转发到开门服务 
+###	当客户端发送的请求以 127.0.0.1:2003/api-opendoor 开头的都会转发到开门服务 
+	  path:/api-opendoor/
+### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
+	  serviceId:  app-openDoor-service  	  
+	  
+	  
+	  
+	  
+---
+#测试环境端口号
+server: 
+  port: 2004
+
+spring:
+  profiles: test
+  application:
+    name: springcloud-service-zuul-config
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: 
+      defaultZone: http://eureka8003.com:8003/eureka/,http://eureka8002.com:8002/eureka/,http://eureka8001.com:8001/eureka/
+
+
+
+zuul:
+  routes:
+    ignored-services:  *
+### 定义转发服务规则
+	api-a:
+###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务 
+	  path:/api-login/
+### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
+	  serviceId:  app-login-service
+	api-b:
+###	当客户端发送的请求以 127.0.0.1:2004/api-opendoor 开头的都会转发到开门服务 
 	  path:/api-opendoor/
 ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
 	  serviceId:  app-openDoor-service  
