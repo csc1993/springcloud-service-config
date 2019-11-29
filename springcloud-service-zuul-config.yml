@@ -10,7 +10,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: springcloud-service-zuul-config-dev
+    name: springcloud-service-zuul-config
 
 eureka:
   client:
@@ -42,7 +42,7 @@ server:
 spring:
   profiles: test
   application:
-    name: springcloud-service-zuul-config-test
+    name: springcloud-service-zuul-config
 
 eureka:
   client:
