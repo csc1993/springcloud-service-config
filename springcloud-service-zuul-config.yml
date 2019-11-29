@@ -20,7 +20,7 @@ eureka:
 
 zuul:
   routes:
-    ignored-services:  *
+#   ignored-services:  *
 ### 定义转发服务规则
 	api-a:
 ###	当客户端发送的请求以 127.0.0.1:2003/api-login 开头的都会转发到登录服务 
@@ -56,7 +56,7 @@ eureka:
 
 zuul:
   routes:
-    ignored-services:  *
+#   ignored-services:  *
 ### 定义转发服务规则
 	api-a:
 ###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务 
