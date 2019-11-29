@@ -24,12 +24,12 @@ zuul:
 ### 定义转发服务规则
 	api-a:
 ###	当客户端发送的请求以 127.0.0.1:2003/api-login 开头的都会转发到登录服务 
-	  path:/api-login/
+	  path:  /sc-paej-system/**
 ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
-	  serviceId:  app-login-service
+	  serviceId:  sc-paej-system
 	api-b:
 ###	当客户端发送的请求以 127.0.0.1:2003/api-opendoor 开头的都会转发到开门服务 
-	  path:/api-opendoor/
+	  path:  /api-opendoor/
 ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
 	  serviceId:  app-openDoor-service  	  
 	  
@@ -60,12 +60,12 @@ zuul:
 ### 定义转发服务规则
 	api-a:
 ###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务 
-	  path:/api-login/
+	  path: /sc-paej-system/**
 ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
-	  serviceId:  app-login-service
+	  serviceId:  sc-paej-system
 	api-b:
 ###	当客户端发送的请求以 127.0.0.1:2004/api-opendoor 开头的都会转发到开门服务 
-	  path:/api-opendoor/
+	  path: /api-opendoor/**
 ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
 	  serviceId:  app-openDoor-service  
 	  
