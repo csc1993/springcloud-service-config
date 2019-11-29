@@ -18,20 +18,20 @@ eureka:
     service-url: 
       defaultZone: http://eureka8003.com:8003/eureka/,http://eureka8002.com:8002/eureka/,http://eureka8001.com:8001/eureka/
 
-#zuul:
-#  routes:
-#   ignored-services:  *
-### 定义转发服务规则
-###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务 
-#	api-a.path: /sc-paej-system/**
-### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
-#	api-a.serviceId:  sc-paej-system
-	
-###	当客户端发送的请求以 127.0.0.1:2004/api-opendoor 开头的都会转发到开门服务 
-#	api-b.path: /api-opendoor/**
-### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
-#	api-b.serviceId:  app-openDoor-service  
-	  
+zuul:
+  routes:
+  ### 定义转发服务规则
+#  	api-a:
+  ###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务
+  	api-a.path:  /sc-paej-system/**
+  ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果
+  	api-a.serviceId:  sc-paej-system
+#  	api-b:
+  ###	当客户端发送的请求以 127.0.0.1:2004/api-opendoor 开头的都会转发到开门服务
+  	api-b.path:  /api-opendoor/
+  ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果
+    api-b.serviceId:  app-openDoor-service
+  ignored-services:  *  
 	  
 	  
 ---
@@ -52,21 +52,20 @@ eureka:
 
 
 
-#zuul:
-#  routes:
-#   ignored-services:  *
-### 定义转发服务规则
-	
-###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务 
-#	api-a.path: /sc-paej-system/**
-### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
-#	api-a.serviceId:  sc-paej-system
-	
-###	当客户端发送的请求以 127.0.0.1:2004/api-opendoor 开头的都会转发到开门服务 
-#	api-b.path: /api-opendoor/**
-### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果	    
-#	api-b.serviceId:  app-openDoor-service  
-	  
+zuul:
+  routes:
+  ### 定义转发服务规则
+#  	api-a:
+  ###	当客户端发送的请求以 127.0.0.1:2004/api-login 开头的都会转发到登录服务
+  	api-a.path:  /sc-paej-system/**
+  ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果
+  	api-a.serviceId:  sc-paej-system
+#  	api-b:
+  ###	当客户端发送的请求以 127.0.0.1:2004/api-opendoor 开头的都会转发到开门服务
+  	api-b.path:  /api-opendoor/
+  ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果
+    api-b.serviceId:  app-openDoor-service
+  ignored-services:  *
 	  
 
   
