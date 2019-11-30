@@ -32,9 +32,7 @@ zuul:
 #  	api-b.path:  /api-opendoor/
   ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果
 #    api-b.serviceId:  app-openDoor-service
-#  ignored-services:  *  
-	  
-	  
+#  ignored-services:  *  	  
 ---
 #测试环境端口号
 server: 
@@ -67,7 +65,5 @@ zuul:
   ### 服务别名 zuul网关默认整合了ribbon 自动实现负载均衡轮询效果
 #    api-b.serviceId:  app-openDoor-service
 #  ignored-services:  *
-	  
-
   
 
